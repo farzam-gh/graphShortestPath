@@ -3,7 +3,7 @@ import java.util.*;
 import java.text.*;
 import java.math.*;
 import java.util.regex.*;
-public class DijkstraHacker2 {
+public class DijkstraSolution {
 
 
     public static void main(String[] args) {
