@@ -1,15 +1,18 @@
+package com.farzam.java;
 import java.io.*;
 import java.util.*;
 
-public class UnweightedGraph {
+public class BotSavesPrinces {
 
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in); 
         char temp;
         int start=0;
 		int dest=0;
+		System.out.println("Enter the number of Nodes: ");
         int n=sc.nextInt();
         Graph g=new Graph(n*n);
+        System.out.println("Enter Graph (-:empty  b:bot  p:princes: ");
         for(int i=0;i<n*n;i++){
             temp=sc.next().charAt(0);
             g.vertices.get(i).data=temp;

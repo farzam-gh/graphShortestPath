@@ -1,3 +1,4 @@
+package com.farzam.java;
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -8,26 +9,31 @@ public class DijkstraSolution {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        int t = in.nextInt();
-        for(int a0 = 0; a0 < t; a0++){
+        System.out.println("Enter the number of Nodes: ");
             int n = in.nextInt();
             Graph g=new Graph(n);
+            System.out.println("Enter the number of Edges: ");
             int m = in.nextInt();
+            System.out.println("Enter the Edges (start end weight): ");
             for(int a1 = 0; a1 < m; a1++){
                 int x = in.nextInt();
                 int y = in.nextInt();
                 int r = in.nextInt();
                 g.addEdge(g.vertices.get(x-1),g.vertices.get(y-1),r);
             }//end of for a1
+            System.out.println("Enter the Start Node: ");
             int s = in.nextInt();
             for(Node x:g.vertices)
                 x.sort();
             dijkstra(g,n,s);
+            System.out.println("start   "+"dest   "+"cost");
             for(int i=1;i<=n;i++)
-                if(i!=s)
-                System.out.print(g.vertices.get(i-1).pl!=Integer.MAX_VALUE-1?g.vertices.get(i-1).pl+" ":"-1 ");
-                System.out.println("");
-        }//end of for a0
+                if(i!=s) {
+                	String ans=g.vertices.get(i-1).pl!=Integer.MAX_VALUE-1?g.vertices.get(i-1).pl+" ":"-1 ";
+                System.out.println(s+"        "+i+"         "+ans);
+                }else
+                	System.out.println("");
+      
     }//end of main
     public static void dijkstra(Graph g,int n,int s){
         ArrayList<Node> unsettled=new ArrayList<>(g.vertices);

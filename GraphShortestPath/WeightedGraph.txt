@@ -1,1 +1,1 @@
-Finds the shortest possible path between two given nodes in an weighted graph.
+Finds the shortest possible path between maximum possible visiting nodes in a weighted graph.

@@ -1,1 +1,0 @@
-Finds the shortest possible path between two given nodes in an unweighted graph.

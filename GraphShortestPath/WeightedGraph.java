@@ -1,18 +1,23 @@
+package com.farzam.java;
 import java.io.*;
 import java.util.*;
 
-public class WeightGraph {
+public class WeightedGraph {
     public static Set<Node> visited=new HashSet<Node>();
     public static ArrayList<Node> unsettled=new ArrayList<Node>();
     static int ans=0;
     
     public static void main(String[] args) {
         Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the nomber of Nodes: ");
         Graph g=new Graph(sc.nextInt());
+        System.out.println("Enter the nomber of Edges: ");
         int m=sc.nextInt();
+        System.out.println("Enter the Edges (start dest weight): ");
         for(int i=0;i<m;i++){
             g.addEdge(g.vertices.get(sc.nextInt()),g.vertices.get(sc.nextInt()),sc.nextInt());
         }//end of for i
+        System.out.println("Enter the start Node: ");
         Node s=g.vertices.get(sc.nextInt());
         dijkstra(g,s);
     }//end of main
@@ -48,6 +53,7 @@ public class WeightGraph {
                  tempEdge=q.first();    
             }//end of while
             if(q.size()==0){
+            	System.out.println("Minimum path length for Maximu possible visited Nodes is: "+ans);
                 System.out.println(ans);
                 return;
             }//end if            
@@ -57,7 +63,7 @@ public class WeightGraph {
             unsettled.remove(tempNode); 
             q.remove(tempEdge);
         }//end of while  
-        System.out.println(ans);
+        System.out.println("Minimum path length for Maximu possible visited Nodes is: "+ans);
     }//end of dijkstra
 }//end of Solution
 
